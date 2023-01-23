@@ -5,7 +5,7 @@ gitpython
 heroku3
 psycopg2-binary
 pyrogram==1.4.16
-pymongo
+pymongo==1.1
 python-dotenv
 Pyromod
 speedtest-cli
