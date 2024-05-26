@@ -92,7 +92,7 @@ class Bot(Client):
                     "Bot tidak dapat Mengambil link invite dari FORCE_SUB_GROUP!"
                 )
                 self.LOGGER(__name__).warning(
-                    f"Pastikan @{self.username} adalah admin di Group Tersebut, Chat ID F-Subs Group Saat Ini: {FORCE_SUB_GROUP}"
+                    f"Pastikan @{self.me.username} adalah admin di Group Tersebut, Chat ID F-Subs Group Saat Ini: {FORCE_SUB_GROUP}"
                 )
                 self.LOGGER(__name__).info(
                     "Bot Berhenti."
