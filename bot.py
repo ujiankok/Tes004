@@ -1,8 +1,9 @@
 # (©) @IndomieProject
 
-import pyromod.listen
-import sys
+from aiohttp import web
+from plugins import web_server
 
+import pyromod.listen
 from aiohttp import web
 from plugins import web_server
 from pyrogram import Client
@@ -173,12 +174,13 @@ class Bot(Client):
 ░╚════╝░░╚════╝░╚═════╝░╚══════╝╚═╝░░╚═╝╚═════╝░░╚════╝░░░░╚═╝░░░╚══════╝
                                           """)
         self.username = usr_bot_me.username
-        #web-response
+        
+#web-response
         app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"
         await web.TCPSite(app, bind_address, PORT).start()
-
+        
     async def stop(self, *args):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped.")
